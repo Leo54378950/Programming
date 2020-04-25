@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "F66CBE1D-EC56-48C8-8655-71995E1B8BC2"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B00229D9-2903-46EC-972A-BAD2963A5D8F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Exercise_1.cpp/main.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "Student"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "B00229D9-2903-46EC-972A-BAD2963A5D8F - 40a63a2169fa1b3a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Student::Student()"
+                  moduleName = "Exercise_1.cpp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yzeng/Desktop/programming/Workshop/cpp/Grammar/Grammar/Grammar/Exercise_1.cpp/Exercise_1.cpp/main.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  uuid = "B00229D9-2903-46EC-972A-BAD2963A5D8F - 40a63a2169fa1b3a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Student::Student()"
+                  moduleName = "Exercise_1.cpp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yzeng/Desktop/programming/Workshop/cpp/Grammar/Grammar/Grammar/Exercise_1.cpp/Exercise_1.cpp/main.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
