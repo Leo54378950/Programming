@@ -71,3 +71,27 @@ void MyBinaryTree::display(Node * pn)
 }
 
 
+int MyBinaryTree::getMax(void){
+    return getMax(root);
+}
+
+int MyBinaryTree::getMax(Node *pn){
+    if (pn == NULL){
+        return 0;
+    }
+    
+    int le_max = 0;
+    int ri_max = 0;
+    if (pn -> left != NULL){
+
+    }
+    if (pn -> right != NULL){
+        ri_max = getMax(pn->right);
+    }
+    return (le_max > ri_max ? le_max : ri_max);
+}
+
+
+int MyBinaryTree::getMin(void){
+    return 0;
+}

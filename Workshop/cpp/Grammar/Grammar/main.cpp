@@ -12,7 +12,6 @@
 #include <ctime>
 #include <random>
 #include <algorithm>
-#include "main.h"
 using namespace std;
 
 void displayVector(vector<int> &vec) {
@@ -77,7 +76,7 @@ void testMyBinaryTree(void) {
     //bt.root->right->right->value = 5;
 
     bt.display();
-    cout << bt.depth() << endl;
+    cout << bt.getMax() << endl;
 }
 
 int main(void) {

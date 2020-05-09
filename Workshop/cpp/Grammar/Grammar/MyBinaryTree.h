@@ -31,6 +31,7 @@ public:
     int depth(void);
     int depth(Node *pn);
     int getMax(void);
+    int getMax(Node *pn);
     int getMin(void);
 
 public:
