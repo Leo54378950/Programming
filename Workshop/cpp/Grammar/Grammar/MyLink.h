@@ -5,9 +5,9 @@
 #include <vector>
 using namespace std;
 
-struct Node {
+struct ListNode {
     int value;
-    Node *next;
+    ListNode *next;
 };
 
 class MyLink
@@ -24,15 +24,17 @@ public:
     void display(void);
 
 public:
-    Node *tail(void);
+    ListNode *tail(void);
     bool hasCircle(void);
-    Node *getCircleEntry(void);
+    ListNode *getCircleEntry(void);
     bool empty(void);
     int size(void);
     void insert(int i, int value);
     void erase(int i);
 
+    void reverse(void);
+
 public:
-    Node *head;
+    ListNode *head;
 };
 

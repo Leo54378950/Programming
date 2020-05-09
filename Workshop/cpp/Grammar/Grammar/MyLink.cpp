@@ -11,9 +11,9 @@ MyLink::~MyLink() {
 
 void MyLink::clear(void) {
     if (hasCircle()) {
-        Node *t = tail();
+        ListNode *t = tail();
         while (head != t) {
-            Node *next = head->next;
+            ListNode *next = head->next;
             delete head;
             head = next;
         }
@@ -23,7 +23,7 @@ void MyLink::clear(void) {
     }
 
     while (head != NULL) {
-        Node *next = head->next;
+        ListNode *next = head->next;
         delete head;
 
         head = next;
@@ -31,7 +31,7 @@ void MyLink::clear(void) {
 }
 
 int &MyLink::at(int index) {
-    Node *pn = head;
+    ListNode *pn = head;
     for (int i = 0; i < index; ++i) {
         if (pn == NULL)
             exit(1);
@@ -43,7 +43,7 @@ int &MyLink::at(int index) {
 }
 
 int &MyLink::operator[](int index) {
-    Node *pn = head;
+    ListNode *pn = head;
     for (int i = 0; i < index; ++i) {
         if (pn == NULL)
             exit(1);
@@ -56,8 +56,8 @@ int &MyLink::operator[](int index) {
 
 void MyLink::display(void) {
     if (hasCircle()) {
-        Node *pn = head;
-        Node *t = tail();
+        ListNode *pn = head;
+        ListNode *t = tail();
         while (pn != t) {
             cout << pn->value << " ";
             pn = pn->next;
@@ -66,7 +66,7 @@ void MyLink::display(void) {
         return;
     }
 
-    Node *pn = head;
+    ListNode *pn = head;
     while (pn != NULL) {
         cout << pn->value << " ";
         pn = pn->next;
@@ -74,13 +74,13 @@ void MyLink::display(void) {
     cout << endl;
 }
 
-Node * MyLink::tail(void)
+ListNode * MyLink::tail(void)
 {
     if (hasCircle()) {
-        Node *entry = getCircleEntry();
+        ListNode *entry = getCircleEntry();
 
-        Node *p1 = entry;
-        Node *p2 = entry;
+        ListNode *p1 = entry;
+        ListNode *p2 = entry;
         int len = 0;
         while (true) {
             p1 = p1->next;
@@ -89,7 +89,7 @@ Node * MyLink::tail(void)
             if (p1 == p2)
                 break;
         }
-        Node *t = entry;
+        ListNode *t = entry;
         for (int i = 0; i < len - 1; i++) {
             t = t->next;
         }
@@ -98,7 +98,7 @@ Node * MyLink::tail(void)
 
     if (head == NULL)
         return NULL;
-    Node *t = head;
+    ListNode *t = head;
 
     while (t->next != NULL)
         t = t->next;
@@ -110,8 +110,8 @@ bool MyLink::hasCircle(void)
     if (empty())
         return false;
 
-    Node *p1 = head;
-    Node *p2 = head;
+    ListNode *p1 = head;
+    ListNode *p2 = head;
     while (true) {
         p2 = p2->next;
         if (p2 == NULL)
@@ -126,13 +126,13 @@ bool MyLink::hasCircle(void)
     }
 }
 
-Node * MyLink::getCircleEntry(void)
+ListNode * MyLink::getCircleEntry(void)
 {
     if (empty())
         return NULL;
 
-    Node *p1 = head;
-    Node *p2 = head;
+    ListNode *p1 = head;
+    ListNode *p2 = head;
     while (true) {
         p2 = p2->next;
         if (p2 == NULL)
@@ -146,7 +146,7 @@ Node * MyLink::getCircleEntry(void)
             break;
     }
 
-    Node *p3 = head;
+    ListNode *p3 = head;
     while (p1 != p3) {
         p1 = p1->next;
         p3 = p3->next;
@@ -162,7 +162,7 @@ int MyLink::size(void) {
     if (hasCircle())
         return -1;
 
-    Node *pn = head;
+    ListNode *pn = head;
     int len = 0;
     while (pn != NULL) {
         len++;
@@ -176,14 +176,14 @@ void MyLink::insert(int i, int value) {
         exit(1);
 
     if (i == 0) {
-        Node *pn = new Node;
+        ListNode *pn = new ListNode;
         pn->value = value;
         pn->next = head;
         head = pn;
         return;
     }
 
-    Node *pn = head;
+    ListNode *pn = head;
     for (int j = 0; j < i - 1; j++) {
         if (pn == NULL)
             exit(1);
@@ -192,7 +192,7 @@ void MyLink::insert(int i, int value) {
     if (pn == NULL)
         exit(1);
 
-    Node *nn = new Node;
+    ListNode *nn = new ListNode;
     nn->value = value;
     nn->next = pn->next;
     pn->next = nn;
@@ -206,13 +206,13 @@ void MyLink::erase(int i) {
         exit(1);
     
     if (i == 0) {
-        Node *next = head->next;
+        ListNode *next = head->next;
         delete head;
         head = next;
         return;
     }
 
-    Node *pn = head;
+    ListNode *pn = head;
     for (int j = 0; j < i - 1; ++j) {
         pn = pn->next;
         if (pn == NULL)
@@ -221,9 +221,26 @@ void MyLink::erase(int i) {
     if (pn->next == NULL)
         exit(1);
 
-    Node *target = pn->next;
+    ListNode *target = pn->next;
     //pn->next = target->next;
     pn->next = pn->next->next;
     delete target;
+}
+
+void MyLink::reverse(void)
+{
+    ListNode *newHead = new ListNode;
+    newHead->next = NULL;
+
+    while (head != NULL) {
+        ListNode *nextPointer = head->next;
+        head->next = newHead->next;
+        newHead->next = head;
+
+        head = nextPointer;
+    }
+
+    head = newHead->next;
+    delete newHead;
 }
 

@@ -5,8 +5,8 @@ bool HasCircle(MyLink a)
     if (a.empty())
         return false;
 
-    Node *p1 = a.head;
-    Node *p2 = a.head;
+    ListNode *p1 = a.head;
+    ListNode *p2 = a.head;
     while (true) {
         p2 = p2->next;
         if (p2 == NULL)
@@ -25,8 +25,8 @@ bool HasCircle(MyLink a)
 
 bool HasCrossing(MyLink a, MyLink b)
 {
-    Node *pa = a.tail();
-    Node *pb = b.tail();
+    ListNode *pa = a.tail();
+    ListNode *pb = b.tail();
 
     return pa == pb;
 }
