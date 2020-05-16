@@ -33,6 +33,7 @@ public:
     int getMax(void);
     int getMax(Node *pn);
     int getMin(void);
+    int getMin(Node *pn);
 
 public:
     void display(void);

@@ -70,28 +70,51 @@ void MyBinaryTree::display(Node * pn)
     display(pn->right);
 }
 
-
 int MyBinaryTree::getMax(void){
     return getMax(root);
 }
 
-int MyBinaryTree::getMax(Node *pn){
-    if (pn == NULL){
-        return 0;
-    }
+int MyBinaryTree::getMax(Node *pn) {
+    if (pn == NULL)
+        return INT_MIN;
     
-    int le_max = 0;
-    int ri_max = 0;
-    if (pn -> left != NULL){
+    int ret = pn->value;
+    if (pn->left != NULL) {
+        int temp = getMax(pn->left);
+        ret = ret >= temp ? ret : temp;
+        //ret = max(ret, getMax(pn->left));
+    }
+    if (pn->right != NULL) {
+        int temp = getMax(pn->right);
+        ret = ret >= temp ? ret : temp;
+        //ret = max(ret, getMax(pn->right));
+    }
 
+    return ret;
+}
+
+int MyBinaryTree::getMin(void) {
+    return getMin(root);
+}
+
+int MyBinaryTree::getMin(Node *pn) {
+    if (pn == NULL)
+        return INT_MAX;
+
+    int ret = pn->value;
+    if (pn->left != NULL) {
+        int temp = getMin(pn->left);
+        ret = ret < temp ? ret : temp;
+        //ret = max(ret, getMax(pn->left));
     }
-    if (pn -> right != NULL){
-        ri_max = getMax(pn->right);
+    if (pn->right != NULL) {
+        int temp = getMin(pn->right);
+        ret = ret < temp ? ret : temp;
+        //ret = max(ret, getMax(pn->right));
     }
-    return (le_max > ri_max ? le_max : ri_max);
+
+    return ret;
 }
 
 
-int MyBinaryTree::getMin(void){
-    return 0;
-}
+
