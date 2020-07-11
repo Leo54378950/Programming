@@ -14,6 +14,8 @@
 #include <algorithm>
 using namespace std;
 
+void testHeap(void);
+
 void displayVector(vector<int> &vec) {
     //for (vector<int>::iterator iter = vec.begin(); iter < vec.end(); iter++)
     //    cout << *iter << " ";
@@ -182,18 +184,8 @@ Node *buildTreeByInorderAndPostorder(vector<int> &inorder, vector<int> &postorde
     return NULL;
 }
 
-
-
-
-
-
-
-
-
-
-
 int main(void) {
-    testMyBinaryTree();
+    testHeap();
     
     system("PAUSE");
     return 0;
